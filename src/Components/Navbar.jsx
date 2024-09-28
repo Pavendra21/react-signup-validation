@@ -14,6 +14,16 @@ const Navbar = () => {
 
     }, [])
 
+    // Handle delete
+    
+
+   const  handleProfile = () => {
+
+    localStorage.setItem("login", false);
+
+    
+   }
+
     return (
         <>
 
@@ -26,7 +36,10 @@ const Navbar = () => {
                     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center space-x-">
 
                         {login ? (
+                            <>
                             <Link to="/excellist" className="mr-5">List</Link>
+                            <Link to="/" onClick={handleProfile} className="mr-5">Log Out</Link>
+                            </>
                         ) : (
                             <>
                                 <Link to="/login" className="mr-5">Login</Link>
